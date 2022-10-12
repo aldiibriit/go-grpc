@@ -1,0 +1,14 @@
+syntax = "proto3";
+option go_package = "go-grpc-2/proto/echo";
+
+message EchoRequest {
+    string message = 1;
+}
+
+message EchoResponse{
+    string message = 1;
+}
+
+service EchoService{
+    rpc UnaryEcho(EchoRequest)returns (EchoResponse){}
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "go-grpc-2/proto/vulcan";
+
+service MobileApps{
+    rpc SelectMobileAppByAppID(RequestSelectMobileAppByAppID)returns(ResponseSelectMobileAppByAppID){}
+}
+
+message ResponseSelectMobileAppByAppID{
+    string status = 1;
+    string message = 2;
+    string APP_ID = 3;
+    string title = 4;
+    string table_name = 5;
+    map<string,string> result = 6;
+}
+
+message RequestSelectMobileAppByAppID{
+    string APP_ID = 1;
+}
